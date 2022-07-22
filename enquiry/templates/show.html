@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Enquiry Records</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Subject</th>
+                <th>Message</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for enquiry in enquiries %}
+            <tr>
+                <td>{{ enquiry.name }}</td>
+                <td>{{ enquiry.email }}</td>
+                <td>{{ enquiry.contact }}</td>
+                <td>{{ enquiry.subject }}</td>
+                <td>{{ enquiry.message }}</td>
+                <td>
+                    <a href="/edit/{{ enquiry.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
+                    <a href="/delete/{{ enquiry.id }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <center><a href="/enquiry" class="btn btn-primary">Add New Record</a></center>
+</body>
+
+</html>
