@@ -15,5 +15,6 @@ python3 manage.py startapp polls
 ### run migration
 
 ```bash
+python3 manage.py makemigrations
 python3 manage.py migrate
 ```
