@@ -18,3 +18,9 @@ python3 manage.py startapp polls
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
+
+### create super admin
+
+```bash
+python3 manage.py createsuperuser --username=nadim --email=nadim.sheikh.07@gmail.com
+```

@@ -9,4 +9,4 @@ class Blog(models.Model):
     End_Date = models.DateField()
 
     class Meta:
-        db_table = 'Blog'
+        db_table = 'blogs'
