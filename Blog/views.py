@@ -5,7 +5,7 @@ from .models import Blog
 
 def retrieve_blog(request):
     blogs = Blog.objects.all()
-    return render(request, 'search.html', {'blogs': blogs})
+    return render(request, 'blog/search.html', {'blogs': blogs})
 
 
 def create_blog(request):
@@ -19,7 +19,7 @@ def create_blog(request):
                 pass
     else:
         form = BlogForm()
-    return render(request, 'create.html', {'form': form})
+    return render(request, 'blog/create.html', {'form': form})
 
 
 def update_blog(request, pk):
@@ -36,7 +36,7 @@ def update_blog(request, pk):
         'blogs': blogs,
         'form': form,
     }
-    return render(request, 'update.html', context)
+    return render(request, 'blog/update.html', context)
 
 
 def delete_blog(request, pk):
@@ -49,4 +49,4 @@ def delete_blog(request, pk):
     context = {
         'blogs': blogs,
     }
-    return render(request, 'remove.html', context)
+    return render(request, 'blog/remove.html', context)
